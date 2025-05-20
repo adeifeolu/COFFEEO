@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Coffeeo - Start your day right with our freshly brewed espresso, latte, mocha and more. Order online or visit us!">
+<meta name="keywords" content="Coffee, Espresso, Latte, Mocha, Cappuccino, Coffee Shop, Order Coffee Online">
+<meta name="author" content="Coffeeo">
+  <title>Coffeeo - Morning Coffee</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+ <style>
+    :root {
+      --main-color: #c7483c;
+      --dark-color: #5c2e1c;
+      --light-color: #fff6f1;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom right, #ffe0c1, #ffffff);
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+   
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--dark-color);
+    }
+
+
+    .contact-btn {
+      border: 1px solid #333;
+      border-radius: 25px;
+      padding: 6px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .contact-btn:hover {
+      background-color: var(--dark-color);
+      color: white;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      color: var(--dark-color);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-text span {
+      color: var(--main-color);
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .btn-order {
+      background-color: var(--main-color);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 30px;
+      margin-right: 20px;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .btn-order:hover {
+      background-color: #a63c32;
+    }
+button:focus, a:focus, select:focus, input:focus, textarea:focus {
+  outline: 3px solid var(--main-color);
+  outline-offset: 2px;
+}
+
+    .btn-video {
+      background: none;
+      border: 2px solid #333;
+      border-radius: 30px;
+      padding: 10px 20px;
+      display: inline-flex;
+      align-items: center;
+      transition: 0.3s;
+    }
+
+    .btn-video:hover {
+      background-color: #333;
+      color: white;
+    }
+
+    .hero-image {
+      max-width: 450px;
+      position: relative;
+      animation: bounceIn 1.2s ease-in-out;
+    }
+
+    .experience-box {
+      background-color: #f6e6d7;
+      border-radius: 10px;
+      padding: 10px 15px;
+      position: absolute;
+      top: 30px;
+      right: -60px;
+      font-weight: bold;
+      color: var(--dark-color);
+    }
+
+    .customers {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .customers img {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      border: 2px solid white;
+    }
+
+    .rating {
+      font-size: 14px;
+      color: var(--main-color);
+    }
+
+    .video-section {
+      padding: 60px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .video-section video {
+      width: 100%;
+      border-radius: 12px;
+      max-height: 400px;
+    }
+
+    #order-form {
+      padding: 60px;
+      background-color: var(--light-color);
+    }
+
+    #order-form h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 30px;
+      color: var(--dark-color);
+    }
+
+    footer {
+      background-color: #fff;
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #eee;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: var(--main-color);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .hero-image {
+        margin-top: 30px;
+      }
+
+      .experience-box {
+        right: 0;
+        left: 0;
+        margin: auto;
+      }
+    }
+
+    .video-section{
+  background-color: #333333; /* dark gray background */
+  padding: 15px;             /* space around the video */
+  border-radius: 15px;       /* rounded corners */
+  max-width: 700px;          /* max width for better layout */
+  margin: 40px auto;         /* center horizontally with margin */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* subtle shadow */
+}
+  
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.3); opacity: 0; }
+      50% { transform: scale(1.05); opacity: 1; }
+      70% { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+
+  
+  </style>
+</head>
+<body>
+ <header style="background-color: #fff6f1; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); animation: fadeInDown 1s ease-in-out;">
+  <!-- Brand Logo -->
+  <div class="d-flex align-items-center gap-3">
+    <div style="background-color: #5c2e1c; color: white; padding: 10px 20px; border-radius: 50px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: 1px;">
+      ☕ COFFEEO
+    </div>
+    <div style="font-style: italic; color: #c7483c; font-size: 16px;">
+      brewed for greatness
+    </div>
+  </div>
+  <!-- CTA Button -->
+   <nav>
+    <a href="#about" class="btn btn-outline-dark rounded-pill px-4 py-2" style="font-weight: 500;">
+      About Us
+   </a>
+     <a href="#coffee" class="btn btn-outline-dark rounded-pill px-4 py-2" style="font-weight: 500;">
+    Our Coffee
+   </a>
+  <a href="#lets-talk" class="btn btn-outline-dark rounded-pill px-4 py-2" style="font-weight: 500;">
+    Let's Talk ☕
+  </a>
+  </nav>
+</header>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="text-muted">Coffee Time...</p>
+      <h1>Enjoy Your <br><span>Morning Coffee</span>.</h1>
+      <p>Boost your productivity and build your mood with a glass of coffee in the morning.</p>
+      <div class="hero-buttons">
+        <button class="btn-order" onclick="handleOrder()">Order Now</button>
+        <button class="btn-video" onclick="playVideo()">▶ Play video</button>
+        
+      </div>
+      <div class="customers">
+        <div class="d-flex">
+          <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Customer" />
+          <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Customer" />
+          <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Customer" />
+          <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Customer" />
+        </div>
+        <span class="rating">+276 Happy Customers</span>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://www.shutterstock.com/image-vector/paper-cup-filled-black-coffee-600nw-1801429321.jpg" class="img-fluid" alt="Coffee Cup" />
+      <div class="experience-box">
+        ☕ 12 Years Experience ★★★★☆
+      </div>
+    </div>
+   </section>
+    <!-- ABOUT US SECTION -->
+<section id="about" class="py-5" style="background-color: #fff3e0;">
+  <div class="container">
+    <h2 class="text-center mb-4" style="font-family: 'Playfair Display', serif; color: #5c2e1c;">About Us</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlJTIwc2hvcHxlbnwwfHwwfHx8MA%3D%3D" class="img-fluid rounded shadow" alt="Our Coffee Shop">
+      </div>
+      <div class="col-md-6">
+        <p style="font-size: 17px; color: #5c2e1c;">
+          Welcome to <strong>Coffeeo</strong>  your favorite destination for the perfect start to your day. We’re more than just a coffee brand we’re a passionate community that values quality, comfort, and connection.
+        </p>
+        <p style="font-size: 17px; color: #5c2e1c;">
+          Since our humble beginnings over a decade ago, we've grown into a neighborhood favorite by crafting coffee experiences that warm the heart and energize the soul. Whether you’re stopping by for your morning boost or catching up with friends, we’re here to serve comfort in a cup.
+        </p>
+        <p style="font-size: 17px; color: #5c2e1c;">
+          Our team is fueled by love for premium ingredients, sustainable practices, and customer happiness. Let's brew joy together one cup at a time.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="video-section" >
+    <video controls>
+      <source src="https://videos.pexels.com/video-files/2909914/2909914-uhd_2732_1440_24fps.mp4" type="video/mp4">
+    </video>
+  </section>
+<section id="coffee" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4" style="font-family: 'Playfair Display', serif; color: #5c2e1c;">Our Coffee Selection</h2>
+    <p class="text-center mb-4" style="color: #666;">
+      We offer a variety of rich, aromatic blends crafted to kickstart your day from bold espresso shots to smooth and creamy lattes.
+    </p>
+    <div class="row">
+      <div class="col-md-3 text-center">
+       <img src="https://media.istockphoto.com/id/1126871442/photo/coffee-cup.jpg?s=612x612&w=0&k=20&c=Jp8v8YqgT9ws-lMN6qiMZmpp5rGlsBpaRCeMS_DmzKs=" class="img-fluid mb-2" alt="Espresso" style="border-radius: 15px;">
+        <h5>Espresso</h5>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="https://media.istockphoto.com/id/505168330/photo/cup-of-cafe-latte-with-coffee-beans-and-cinnamon-sticks.jpg?s=612x612&w=0&k=20&c=h7v8kAfWOpRapv6hrDwmmB54DqrGQWxlhP_mTeqTQPA=" class="img-fluid mb-2" alt="Cappuccino"  style="border-radius: 15px;">
+        <h5>Cappuccino</h5>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="https://media.istockphoto.com/id/1028658748/photo/caffe-latte-layered.jpg?s=612x612&w=0&k=20&c=_XW6ovSfKYi1HNlLYxEDIWjUZhUuDfJaQozxZ9AKSto=" class="img-fluid mb-2" alt="Latte" style="border-radius: 15px;">
+        <h5>Latte</h5>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="https://media.istockphoto.com/id/157675911/photo/cappuccino-topped-with-swirls-of-chocolate-sauce.jpg?s=612x612&w=0&k=20&c=606NMYMjVnTmpSnJI537_IjW3lqfNJaH7Lc9Qg0BXPU=" class="img-fluid mb-2" alt="Mocha" style="border-radius: 15px;">
+        <h5>Mocha</h5>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="order-form" class="container">
+  <h2>Order Your Coffee</h2>
+  <form onsubmit="submitOrder(event)" class="row g-3"> 
+    <div class="col-md-6">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" id="name" name="name" class="form-control" required />
+    </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" id="email" name="email" class="form-control" required />
+    </div>
+    <div class="col-md-6">
+      <label for="coffee-type" class="form-label">Select Coffee</label>
+      <select id="coffee-type" name="coffee" class="form-select" required>
+        <option value="">Choose...</option>
+        <option value="espresso">Espresso</option>
+        <option value="cappuccino">Cappuccino</option>
+        <option value="latte">Latte</option>
+        <option value="mocha">Mocha</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input type="number" id="quantity" name="quantity" class="form-control" min="1" required />
+    </div>
+
+    <!-- ✅ New Delivery Option Field -->
+    <div class="col-md-6">
+      <label for="deliveryOption" class="form-label">Delivery Option</label>
+      <select id="deliveryOption" name="deliveryOption" class="form-select" required>
+        <option value="">Select Option</option>
+        <option value="pickup">Pickup</option>
+        <option value="delivery">Home Delivery</option>
+      </select>
+    </div>
+
+    <!-- ✅ New Payment Method Field -->
+    <div class="col-md-6">
+      <label for="paymentMethod" class="form-label">Payment Method</label>
+      <select id="paymentMethod" name="paymentMethod" class="form-select" required>
+        <option value="">Select Payment Method</option>
+        <option value="card">Credit/Debit Card</option>
+        <option value="transfer">Bank Transfer</option>
+        <option value="cash">Cash on Delivery</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <label for="notes" class="form-label">Additional Notes</label>
+      <textarea id="notes" name="notes" class="form-control" rows="3"></textarea>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-order w-100">Submit Order</button>
+    </div>
+  </form>
+</section>
+
+<!-- Let's Talk Over Coffee ☕ -->
+ <section id="lets-talk">
+<div style="background: #fff0e5; background-position: center; padding: 60px 20px; text-align: center;">
+  <h2 style="color: #8b3a1d; font-size: 36px; margin-bottom: 20px;">Let’s Talk Over Coffee ☕</h2>
+  <p style="color: #5c2e1c; font-size: 18px; margin-bottom: 40px;">
+    Got questions, ideas, or just want to say hello? Let’s connect! I’m always open to networking and opportunities.
+  </p>
+  <div class="contact-card" style="
+    background: #fff5ec;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(92, 46, 28, 0.25);
+    padding: 30px 40px;
+    color: #5c2e1c;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  ">
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+   <i class="bi bi-geo-alt-fill" style="font-size: 28px; margin-right: 15px; color: #a0522d;"></i>
+        <div>
+          <strong>Address</strong><br />
+          Yaba, Lagos, Nigeria
+        </div>
+        </div>
+      <div style="display: flex; align-items: center; margin-bottom: 20px;">
+        <i class="bi bi-telephone-fill" style="font-size: 28px; margin-right: 15px; color: #a0522d;"></i>
+        <div>
+          <strong>Phone</strong><br />
+          +234 812 345 6789
+        </div>
+      </div>
+      
+      <div style="display: flex; align-items: center; margin-bottom: 20px;">
+        <i class="bi bi-envelope-fill" style="font-size: 28px; margin-right: 15px; color: #a0522d;"></i>
+        <div>
+          <strong>Email</strong><br />
+          hello@coffeeo.com
+        </div>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <i class="bi bi-clock-fill" style="font-size: 28px; margin-right: 15px; color: #a0522d;"></i>
+        <div>
+          <strong>Hours</strong><br />
+          Mon - Sat: 8am - 6pm
+        </div>
+      </div>
+    </div>
+  </div>
+ </SEction>
+      <footer style="background-color: #fff6f1;">
+    <p>Follow us:</p>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <p class="mt-2">&copy; 2025 Coffeeo. All rights reserved.</p>
+  </footer>
+
+   <script>
+    function handleOrder() {
+      document.getElementById("order-form").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function playVideo() {
+      window.scrollTo({ top: document.querySelector('video').offsetTop, behavior: 'smooth' });
+    }
+
+    function submitOrder(event) {
+      event.preventDefault();
+      alert("Your coffee order has been received! We'll contact you shortly.");
+      document.querySelector('form').reset();
+    }
+   </script>
+     <script>
+
+    function playVideo() {
+      const video = document.querySelector(".video-section video");
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+
+    function submitOrder(event) {
+      event.preventDefault();
+      alert("Thank you for your order! We will contact you soon.");
+      event.target.reset();
+    }
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</body>
+</html>
